@@ -1,0 +1,602 @@
+/* Reset básico */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+body{
+  color: #333;
+  background-color: #e5dfcf;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+}
+
+/* marca */
+.marca{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marca img{
+  width: 40%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* cabeca */
+.cabeca{
+  background-color: #57371e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.itens_cabeca{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* navegacao */
+.navegacao{
+  display: none;
+  margin: 10px auto;
+  align-items: center;
+}
+
+.navegacao ul{
+  list-style: none;
+  display: flex;
+  font-size: 18px;
+  gap: 10px;
+}
+.navegacao ul li a{
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.navegacao ul li a:hover{
+  background-color: #d4a373;
+}
+
+/* Responsividade teste */
+@media (min-width: 768px){
+  .navegacao{
+    display: block;
+  }
+
+  .navegacao ul{
+    display: flex;
+    gap: 1rem;
+  }
+
+  .botao_zap1{
+    display: flex;
+  }
+
+  .cel_teste{
+    display: none;
+  }
+}
+
+.inicio{
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 80px 32px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.inicio h1{
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+}
+.inicio p{
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  color: #e5dfcf;
+}
+.inicio_caixas{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Botão de agendamento */
+.caixa_agendar{
+  background-color: #d4a373;
+  color: #2c2c2c;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.caixa_agendar:hover{
+  background-color: #25D366;
+  color: #000000;
+  transform: translateY(-2px);
+}
+.caixa_servicos{
+  background-color: transparent;
+  color: #d4a373;
+  border: 2px solid #d4a373;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.caixa_servicos:hover{
+  background-color: #e5dfcf;
+  color: #2c2c2c;
+  border: 2px solid #e5dfcf;
+  transform: translateY(-2px);
+}
+.caixa_servico p{
+  font-size: 17px;
+}
+
+/* Sobre */
+.sobre{
+  background-color: #e5dfcf;
+  color: #57371e;
+  padding: 80px 32px;
+  text-align: center;
+}
+.sobre img{
+  height: 300px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+}
+.sobre h2{
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #57371e;
+  font-family: "Playfair Display", serif;
+}
+.sobre p{
+  font-size: 16px;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sobre-caixas{
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sobre_caixa{
+  background-color: #f5f2ef;
+  padding: 32px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sobre_caixa:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px #57371e;
+}
+.sobre_caixa h3{
+  color: #57371e;
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+}
+.sobre_caixa p{
+  color: #2c2c2c;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.servicos{
+  background-color: #2c2c2c;
+  padding: 80px 32px;
+  text-align: center;
+  color: #2c2c2c;
+}
+.servicos h2{
+  font-size: 32px;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+}
+.servicos-caixas{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-bottom: 2.5rem;
+}
+.caixa_servico{
+  background-color: #e5dfcf;
+  padding: 32px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.caixa_servico:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px #e5dfcf;
+}
+.caixa_servico h3{
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #57371e;
+  font-family: "Playfair Display", serif;
+}
+.caixa_servico ul{
+  list-style: none;
+  padding-left: 0;
+}
+.caixa_servico ul li{
+  margin-bottom: 0.6rem;
+  padding-left: 1.2rem;
+  position: relative;
+  color: #000000;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.caixa_servico ul li::before{
+  content: "•";
+  color: #57371e;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Botão do zap */
+.botao_zap2{
+  background-color: #25D366;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.botao_zap2:hover{
+  background-color: #fcfcfc;
+  color: #282828;
+}
+
+/* Atendimento */
+.atendimento{
+  background: #ffffff;
+  padding: 4rem 32px;
+  border-radius: 12px;
+  margin: 3rem auto;
+  max-width: 1100px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.atendimento-caixas{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Info */
+.info-atendimento{
+  flex: 1;
+  min-width: 300px;
+}
+.info-atendimento h2{
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #2c2c2c;
+  font-family: "Playfair Display", serif;
+}
+.info-atendimento p{
+  font-size: 16px;
+  margin: 0.4rem 0;
+  color: #444;
+}
+
+/* Contato */
+.contato-atendimento{
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #000000;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgb(0, 0, 0);
+}
+.contato-atendimento h2{
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+}
+.contato-atendimento p{
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* Botão zap maior */
+.botao-zap-2{
+  display: inline-block;
+  background-color: #282828;
+  color: #25D366;
+  font-weight: bold;
+  padding: 16px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+.botao-zap-2:hover{
+  background-color: #ffffff;
+  transform: scale(1.05);
+}
+/* Texto extra */
+.botao-contato p{
+  margin: 0.3rem 0;
+  font-size: 16px;
+}
+
+/* Seção Trabalhos */
+.trabalho {
+  padding: 4rem 2rem;
+  background: #282828;
+  color: #e5dfcf;
+}
+
+.trabalho h2 {
+  color: #e5dfcf;
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+}
+.trabalho-blocos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.trabalho-bloco {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.trabalho-bloco:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+.trabalho-bloco img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+.trabalho-bloco h3 {
+  font-size: 1.3rem;
+  margin: 1rem 1rem 0.3rem;
+  color: #222;
+  text-align: center
+}
+.trabalho-bloco h4 {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0 1rem 0.5rem;
+  font-weight: 400;
+  color: #222;
+}
+.trabalho-bloco p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0 1rem 1.5rem;
+  color: #2c2c2c;
+  text-align: center
+}
+
+/* Assinaturas */
+.assinaturas{
+  padding: 50px 20px;
+  background: #e5dfcf;
+  text-align: center;
+}
+.assinaturas h2{
+  font-size: 32px;
+  color: #222;
+  font-family: "Playfair Display", serif;
+}
+.assinaturas h3{
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+}
+.caixas-assinaturas{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.assinatura{
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.48);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.assinatura:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgb(255, 255, 255);
+}
+.assinatura h3{
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+}
+.assinatura p{
+  margin: 0 0 10px 0;
+}
+.assinatura ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.assinatura .destaque{
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+/* caixas */
+.caixas-info-assinatura{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.48);
+  border-radius: 12px;
+}
+.caixa-info-assinatura{
+  color: white;
+  padding: 20px 15px;
+  width: 100%;
+  max-width: 550px;
+  text-align: left;
+}
+.caixa-info-assinatura h3{
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+}
+.caixa-info-assinatura p{
+  margin: 0 0 10px 0;
+}
+.caixa-info-assinatura ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.caixa-info-assinatura .destaque{
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.caixas-info-assinatura{
+  background: linear-gradient(135deg, #000000, #1d1d1d);
+}
+
+.essencial{
+  background: linear-gradient(135deg, #8B4513, #dd7a34);
+}
+.premium{
+  background: linear-gradient(135deg, #DAA520, #ffc229);
+}
+.master{ 
+  background: linear-gradient(135deg, #800080, #ff02ff);
+}
+
+/*contato */
+.contato{
+  background: #282828;
+  padding: 4rem 1.5rem;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+}
+.caixas-contato{
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #e5dfcf;
+  border-radius: 10%;
+}
+/* Caixas */
+.caixa-contato{
+  background-color: #e5dfcf;
+  padding: 1.8rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.caixa-contato:hover{
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.422);
+}
+.caixa-contato h3{
+  margin-bottom: 1.2rem;
+  color: #282828;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  border-bottom: 2px solid rgba(40,40,40,0.2);
+  padding-bottom: 0.5rem;
+}
+/* Ícones e textos */
+.caixa-contato p{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.caixa-contato a{
+  text-decoration: none;
+  color: #282828;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.caixa-contato a:hover{
+  color: #DAA520;
+  transform: translateX(4px);
+}
+
+/* Ícones */
+.icon{
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  transition: transform 0.3s ease;
+}
+.icon:hover{
+  transform: scale(1.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px){
+  .caixas-contato{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+footer{
+  background-color: #222222;
+  color: #d4a373;
+  text-align: center;
+  padding: 15px;
+}
+
+footer a{
+  text-decoration: none;
+  color: #fff;
+}
